@@ -17,7 +17,8 @@
 	Self.GetObjectByName("Text1", Text1)
 	Dim url="http://www.thetvdb.com/api/GetSeries.php?seriesname=" & Text1.Text
 
-	Dim sFolder = "c:\"
+	' make sure the folder exists before running this script 
+	Dim sFolder = "d:\texture_downloads\"
 	Dim sName = Right(url, Len(url)-InStrRev(url,"/") )
 	Dim sLocation
 	Dim objHTTP As Object

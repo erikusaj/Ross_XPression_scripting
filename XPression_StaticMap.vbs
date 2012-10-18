@@ -15,7 +15,9 @@
 	Self.GetObjectByName("Text1", Text1)
 	Dim url="http://maps.googleapis.com/maps/api/staticmap?center=" & Text1.Text & "&zoom=13&size=600x600&sensor=false"
 
-	Dim sFolder = "d:\texture_downloads"
+	' make sure the folder exists before running this script 
+	Dim sFolder = "d:\texture_downloads\"
+	
 	Dim sName = Right(url, Len(url)-InStrRev(url,"/") )
 	Dim sLocation
 	Dim objHTTP As object
@@ -29,7 +31,7 @@
 		Dim sExt = objHTTP.getResponseHeader("Content-Type")
 		sExt = Right(sExt, Len(sExt)-InStrRev(sExt,"/"))
 		sLocation = sFolder & "static_map_from_google." & sExt
-		'create binary stream object
+		' create binary stream object
 		Dim objADOStream As object
 		objADOStream = CreateObject("ADODB.Stream")
 		objADOStream.Open

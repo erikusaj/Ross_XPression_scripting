@@ -20,7 +20,8 @@
 	Self.GetObjectByName("Text1", Text1)
 	dim url="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="& Text1.Text &"&choe=UTF-8"
 
-	dim sFolder = "c:\"
+	' make sure the folder exists before running this script 
+	dim sFolder = "d:\texture_downloads\"
 	dim sName = Right(url, Len(url)-InStrRev(url,"/") )
 	dim sLocation
 	dim objHTTP as object
